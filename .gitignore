@@ -2,3 +2,4 @@ nord/audio/*
 **/documents/*
 nord/image/*
 source/sound/*
+*.log
