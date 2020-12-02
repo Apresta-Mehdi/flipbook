@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Magalone Demo</title>
+        <!-- Mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Maglify Standalone -->
+        <script src="../source/js/magalone.min.js" type="text/javascript"></script>
+        <link href="../source/css/magalone.min.css" type="text/css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <!-- Your content here -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+        <link href="demo_style.css" type="text/css" rel="stylesheet" />
+
+        <script type="text/javascript">
+            exHelp.subscribe("_dom_ready", function ()
+            {
+                exHelp.e("#okbutton").on("click tap", function ()
+                {
+                    exHelp.e("#modal").addClass("hidden");
+                });
+
+                exHelp.e("#showbutton").on("click tap", function ()
+                {
+                    exHelp.e("#modal").removeClass("hidden");
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="logo">Magalone Demo</div>
+            <div class="center">
+                <div class="button">
+                    <a href="index.html"><span class="desktop-only">Default</span> <span class="icon mobile-only">star_border</span></a>
+                </div>
+                <div class="button">
+                    <a href="simple.html"><span class="desktop-only">Simple</span> <span class="icon mobile-only">stop</span></a>
+                </div>
+                <div class="button active">
+                    <a href="everything.html"><span class="desktop-only">Everything</span> <span class="icon invert mobile-only">view_quilt</span></a>
+                </div>
+                <div class="button">
+                    <a href="themes.html"><span class="desktop-only">Themes</span> <span class="icon mobile-only">format_paint</span></a>
+                </div>
+                <div class="button ">
+                    <a href="contained.html">
+                        <span class="desktop-only">Contained/Slideshow</span> <span class="icon  mobile-only">slideshow</span>
+                    </a>
+                </div>
+                <div class="button active" id="showbutton">
+                    <a href="#"><span class="desktop-only">Show Info</span> <span class="icon invert mobile-only">help</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="demo-info">
+            <h1>Demo 3: Everything</h1>
+            <ul>
+                <li>All controls enabled (except slideshow)</li>
+                <li>Controls are in small-mode</li>
+                <li>Thumbnails take up space instead of hovering over the magazine</li>
+                <li>Thumbnails are on the right side instead of bottom</li>
+                <li>Area overlay on page 1</li>
+                <li>Pin overlays on page 2 and 3</li>
+                <li>Touch gestures enabled</li>
+                <li>Keyboard navigation enabled</li>
+            </ul>
+            <div class="button" id="okbutton">OK</div>
+        </div>
+
+        <div id="reader-container"
+            data-path="./documents/doc1/"
+            data-thumbnails-overlay="false"
+            data-thumbnails-start-open="true"
+            data-show-fullscreen="true"
+            data-immersive-fullscreen="true"
+            data-show-thumbnails="true"
+            data-show-invert="true"
+            data-show-zoom="true"
+            data-show-download="true"
+            data-thumbnails-direction="right"
+            data-enable-swiping="true"
+            data-enable-pinching="true"
+            data-enable-double-click="true"
+            data-enable-mouse-wheel="true"
+            data-zoom-wheel="10"
+            data-page-sound="1"
+            data-animation="flip"
+            data-slideshow="false"
+            data-page-mode="auto">
+            <div class="overlay" data-display="area" data-type="page" data-x="55" data-y="520" data-width="290" data-height="190" data-page="1">
+                <source src="4" />
+            </div>
+
+            <div class="overlay" data-display="pin" data-type="html" data-x="650" data-y="650" data-open-width="500" data-page="2">
+                <h2>Overlay with HTML content</h2>
+                <p>This overlay contains <em>custom</em> HTML content.</p>
+                <p>You can feel free to add <strong>anything</strong> you want in these</p>
+                <div style="background: #f00; width: 100px; height: 50px; -moz-transform: rotate(20deg); -ms-transform: rotate(20deg); -o-transform: rotate(20deg); -webkit-transform: rotate(20deg); transform: rotate(20deg);">
+                </div>
+                <div style="background: #00f; width: 100px; height: 50px; -moz-transform: rotate(-20deg); -ms-transform: rotate(-20deg); -o-transform: rotate(-20deg); -webkit-transform: rotate(-20deg); transform: rotate(-20deg);">
+                </div>
+            </div>
+
+            <div class="overlay" data-display="pin" data-type="video" data-x="690" data-y="380" data-page="3">
+                <source src="video/small.webm" type="video/webm" />
+                <source src="video/small.ogv" type="video/ogg" />
+                <source src="video/small.mp4" type="video/mp4" />
+                <source src="video/small.3gp" type="video/3gp" />
+            </div>
+
+            <div class="overlay" data-display="pin" data-type="audio" data-x="580" data-y="1270" data-page="3">
+                <source src="audio/opus.opus" type="audio/ogg; codecs=&quot;opus&quot;" />
+                <source src="audio/weba.weba" />
+                <source src="audio/ogg.ogg" />
+                <source src="audio/mp3.mp3" />
+                <source src="audio/wav.wav" />
+                <source src="audio/flac.flac" />
+            </div>
+        </div>
+
+        <div id="background"></div>
+    </body>
+</html>
